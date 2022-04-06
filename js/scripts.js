@@ -92,3 +92,44 @@ function getData() {
 		}, 1000 * Math.random());
 	});
 }
+
+async function appendData() {
+	const data = await getData();
+	const tableBodyEl = document.querySelector("#table-data");
+
+	let tempInnerHTML = "";
+
+	data.forEach((el) => {
+		// OPTION A
+		const currentEl = `
+		    <tr id="${el.id}">
+		        <td>${el.type}</td>
+		        <td>${el.value}</td>
+		        <td>${el.online}</td>
+		        <td>${el.location}</td>
+		    </tr>
+		`;
+		tempInnerHTML += currentEl;
+
+		// OPTION B
+		// const tr = document.createElement("tr");
+		// tr.setAttribute("id", el.id);
+		// const tdType = document.createElement("td");
+		// tdType.innerText = el.type;
+		// const tdValue = document.createElement("td");
+		// tdValue.innerText = el.value;
+		// const tdOnline = document.createElement("td");
+		// tdOnline.innerText = el.online;
+		// const tdLocation = document.createElement("td");
+		// tdLocation.innerText = el.location;
+		// tr.appendChild(tdType);
+		// tr.appendChild(tdValue);
+		// tr.appendChild(tdOnline);
+		// tr.appendChild(tdLocation);
+		// tableBodyEl.append(tr);
+	});
+
+	tableBodyEl.innerHTML = tempInnerHTML;
+}
+
+document.addEventListener("DOMContentLoaded", appendData);

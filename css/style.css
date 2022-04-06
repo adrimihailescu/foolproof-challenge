@@ -1,0 +1,32 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: bisque;
+}
+
+.container {
+	align-items: center;
+	justify-content: center;
+	display: grid;
+	max-width: 900px;
+	margin: 50px auto 0;
+	background: rgba(148, 124, 176, 0.6);
+	padding: 10px;
+}
+
+table,
+th,
+td {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+td {
+	text-transform: capitalize;
+}
