@@ -7,26 +7,88 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background-color: bisque;
+	background-color: lightgrey;
 }
 
-.container {
+header h1 {
+	font-size: 50px;
+	text-transform: uppercase;
+}
+
+header p {
+	font-size: 30px;
+	text-align: center;
+}
+
+main {
 	align-items: center;
 	justify-content: center;
 	display: grid;
-	max-width: 900px;
-	margin: 50px auto 0;
-	background: rgba(148, 124, 176, 0.6);
+	height: 100vh;
+	width: 100%;
 	padding: 10px;
+}
+
+table {
+	background-color: white;
+	width: 100%;
 }
 
 table,
 th,
 td {
-	border: 1px solid black;
-	padding: 10px;
+	border-top: 1px solid black;
+	padding: 15px;
 }
 
-td {
+tr {
 	text-transform: capitalize;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+tr:nth-child(even) {
+	background-color: aquamarine;
+}
+
+tr:nth-child(odd) {
+	background-color: whitesmoke;
+}
+
+@media screen and (max-width: 600px) {
+	table {
+		border: 0;
+	}
+
+	table thead {
+		border: none;
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+
+	table tr {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	table td {
+		display: block;
+		font-size: 13px;
+		text-align: right;
+	}
+
+	table td:last-of-type {
+		border-bottom: 1px solid black;
+	}
+
+	table td::before {
+		content: attr(data-label);
+		float: left;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
 }

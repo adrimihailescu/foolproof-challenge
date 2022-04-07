@@ -103,10 +103,10 @@ async function appendData() {
 		// OPTION A
 		const currentEl = `
 		    <tr id="${el.id}">
-		        <td>${el.type}</td>
-		        <td>${el.value}</td>
-		        <td>${el.online}</td>
-		        <td>${el.location}</td>
+		        <td data-label="type">${el.type}</td>
+		        <td data-label="value">${el.value}</td>
+		        <td data-label="online">${el.online}</td>
+		        <td data-label="location">${el.location}</td>
 		    </tr>
 		`;
 		tempInnerHTML += currentEl;
